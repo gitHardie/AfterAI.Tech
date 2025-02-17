@@ -29,17 +29,6 @@ jobs:
           hexo clean
           hexo generate
           
-      - name: Setup SSH Key with Passphrase
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.HEXO_DEPLOY_KEY }}" > ~/.ssh/github
-          chmod 600 ~/.ssh/github
-          eval "$(ssh-agent -s)"
-          echo "${{ secrets.PASSPHRASE }}" | ssh-add ~/.ssh/github
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-        env:
-          SSH_ASKPASS: /bin/echo "${{ secrets.PASSPHRASE }}"
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
