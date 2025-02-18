@@ -1,8 +1,8 @@
 ---
 title: 后AI时代的畅想
 date: 2023-02-21 15:50:53
-tags:未来畅想
-categories:
+tags: 未来畅想
+categories: 
 - 畅想
 - 未来
 - 愿景
