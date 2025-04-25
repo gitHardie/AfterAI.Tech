@@ -29,6 +29,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add articleResource
+          git pull origin master  # 防止推送失败，先拉一下最新提交
+          git add articleResources
           git commit -m "📰 Daily AI articles update: $(date '+%Y-%m-%d')" || echo "No changes to commit"
           git push
